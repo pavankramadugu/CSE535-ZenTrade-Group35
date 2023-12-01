@@ -2,7 +2,7 @@
 
 ZenTrade is a smart mobile app that tailors investment advice and optimizes portfolios based on individual preferences. It embraces the "Guardian Angel" philosophy, combining financial technology with stress monitoring. The app adjusts to users' risk tolerance, stress levels, and trading frequency patterns, providing a personalized and adaptive investment experience across different assets, including stocks
 
-## Readme for Executing the Database User Operations and Testing Scripts
+## Readme for Executing the Recommenddation fetching, Database User Operations and Testing Scripts
 
 This readme provides instructions on how to execute the recommendations fetching, user database operations and testing scripts.
 
@@ -11,11 +11,11 @@ This readme provides instructions on how to execute the recommendations fetching
 Before running the scripts, ensure you have the following installed:
 
 - Python 3.8+
-- packaages: yfinance, pandas, niftystocks, pytickersymbols, numpy, pymongo, python-dotenv, pytest
+- packages: yfinance, pandas, niftystocks, pytickersymbols, numpy, pymongo, python-dotenv, pytes, etc (Which are mentioned in the requirements.txt file)
 
-You can install these packages using pip and follow the below step and command:
+You can install these packages using pip and follow the below command:
 
-Enter into the lambda folder using `cd lambda` then execute this command
+Execute this command
 
 ```bash
 pip install -r requirements.txt
@@ -33,7 +33,7 @@ pip install -r requirements.txt
     - `test_stock_analysis.py`: Contains unit tests for the functions in `stock_ana;lysis.py`.
     - `test_users.py`: Contains unit tests for the functions in `users.py`
 
-## Running the Main Script (`stock_analysis.py`)
+## Running the Stock Analysis Script (`stock_analysis.py`)
 
 1. Open your command line interface (CLI).
 2. Navigate to the directory(lambda) containing the script.
