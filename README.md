@@ -1,10 +1,10 @@
 # ZenTrade
 
-ZenTrade Is a context-aware mobile app for high-net-worth individuals (HNWIs) offering personalized investment advice and portfolio rebalancing across various assets, including stocksinvestment advisory by embodying the "Guardian Angel" philosophy. This app uniquely integrates financial technology with stress monitoring, adapting to individual risk tolerance, stress levels, and trading frequency patterns."
+ZenTrade is a smart mobile app that tailors investment advice and optimizes portfolios based on individual preferences. It embraces the "Guardian Angel" philosophy, combining financial technology with stress monitoring. The app adjusts to users' risk tolerance, stress levels, and trading frequency patterns, providing a personalized and adaptive investment experience across different assets, including stocks
 
 ## Readme for Executing the Database User Operations and Testing Scripts
 
-This readme provides instructions on how to execute the user database operations, fetching recommendations and testing scripts.
+This readme provides instructions on how to execute the recommendations fetching, user database operations and testing scripts.
 
 ## Requirements
 
@@ -13,9 +13,9 @@ Before running the scripts, ensure you have the following installed:
 - Python 3.8+
 - packaages: yfinance, pandas, niftystocks, pytickersymbols, numpy, pymongo, python-dotenv, pytest
 
-You can install these packages using pip and follow below step and command:
+You can install these packages using pip and follow the below step and command:
 
-Enter into the lambda folder using cd lambda then execute this command
+Enter into the lambda folder using `cd lambda` then execute this command
 
 ```bash
 pip install -r requirements.txt
