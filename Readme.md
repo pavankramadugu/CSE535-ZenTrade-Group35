@@ -7,7 +7,7 @@ ZenTrade is an innovative mobile application created using Kotlin and Android St
 I contributed to several primary files, including `activity_instruments_to_trade.xml`, `activity_markets_to_trade.xml`, and `activity_recommendations.xml`, along with their respective Kotlin files. These files are integral to the project and rely on the other files in the repository for full functionality. It's important to include the entire project code when cloning or pulling from this repository to ensure these files work as intended.
 
 ## Setup and Installation
-- **Clone the Repository**: `git clone'
+- **Clone the Repository**: `git clone https://github.com/pavankramadugu/CSE535-ZenTrade-Group35.git'
 - **Open Android Studio**: Launch Android Studio and open the cloned project.
 - **Install Dependencies**: Make sure all required dependencies are installed.
 - **Run the Application**: Build the project and run it on an emulator or a physical device.
