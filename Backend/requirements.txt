@@ -1,0 +1,11 @@
+aws-cdk.aws-lambda
+aws-cdk.aws-apigateway
+aws-cdk.core
+yfinance
+pandas
+niftystocks
+pytickersymbols
+numpy
+pymongo
+python-dotenv
+pytest
