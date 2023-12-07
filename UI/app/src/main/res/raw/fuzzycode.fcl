@@ -1,0 +1,57 @@
+FUNCTION_BLOCK fuzzytipper
+VAR_INPUT
+    Risk : REAL;
+    HeartRate : REAL;
+    RespiratoryRate : REAL;
+END_VAR
+
+VAR_OUTPUT
+    Factor : REAL;
+END_VAR
+
+FUZZIFY Risk
+    TERM Low := (0, 1) (30, 1) (40, 0);
+    TERM Medium := (30, 0) (40, 1) (60, 1) (70, 0);
+    TERM High := (60, 0) (70, 1) (100, 1);
+END_FUZZIFY
+
+FUZZIFY HeartRate
+    TERM Low := (40, 1) (70, 1) (80, 0);
+    TERM Medium := (70, 0) (80, 1) (100, 1) (120, 0);
+    TERM High := (100, 0) (120, 1) (150, 1);
+END_FUZZIFY
+
+FUZZIFY RespiratoryRate
+    TERM Low := (10, 1) (15, 1) (20, 0);
+    TERM Medium := (15, 0) (20, 1) (25, 1) (30, 0);
+    TERM High := (25, 0) (30, 1);
+END_FUZZIFY
+
+DEFUZZIFY Factor
+    TERM Low := (0, 1) (30, 1) (40, 0);
+    TERM Medium := (30, 0) (40, 1) (60, 1) (70, 0);
+    TERM High := (60, 0) (70, 1) (100, 1);
+    METHOD : COG;
+END_DEFUZZIFY
+
+RULEBLOCK No1
+    AND : MIN;
+    ACT : MIN;
+    ACCU : MAX;
+
+    RULE 1 : IF HeartRate IS High THEN Factor IS Low;
+    RULE 2 : IF RespiratoryRate IS High THEN Factor IS Low;
+    RULE 3 : IF Risk IS Low AND RespiratoryRate IS Low AND HeartRate IS Low THEN Factor IS Low;
+    RULE 4 : IF Risk IS Medium AND RespiratoryRate IS Low AND HeartRate IS Low THEN Factor IS Medium;
+    RULE 5 : IF Risk IS High AND RespiratoryRate IS Low AND HeartRate IS Low THEN Factor IS High;
+    RULE 6 : IF Risk IS High AND RespiratoryRate IS Medium AND HeartRate IS Medium THEN Factor IS High;
+    RULE 7 : IF Risk IS High AND RespiratoryRate IS Medium AND HeartRate IS Low THEN Factor IS High;
+    RULE 8 : IF Risk IS Medium AND RespiratoryRate IS Medium AND HeartRate IS Medium THEN Factor IS Medium;
+    RULE 9 : IF Risk IS Low AND RespiratoryRate IS Medium AND HeartRate IS Low THEN Factor IS Low;
+    RULE 10: IF Risk IS Low AND RespiratoryRate IS Low AND HeartRate IS Medium THEN Factor IS Low;
+    RULE 11: IF Risk IS Low AND RespiratoryRate IS Medium AND HeartRate IS Medium THEN Factor IS Low;
+    RULE 12: IF Risk IS Medium AND RespiratoryRate IS Medium AND HeartRate IS Low THEN Factor IS Medium;
+    RULE 13: IF Risk IS Medium AND RespiratoryRate IS Low AND HeartRate IS Medium THEN Factor IS Medium;
+    RULE 14: IF Risk IS High AND RespiratoryRate IS Low AND HeartRate IS Medium THEN Factor IS High;
+END_RULEBLOCK
+END_FUNCTION_BLOCK
