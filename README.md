@@ -57,46 +57,48 @@ This readme provides instructions on how to execute the stock recommendation and
 Before running the scripts, ensure you have the following installed:
 
 - Python 3.8+
-- Libraries: yfinance, pandas
-- Additional packages: niftystocks, pytickersymbols
+- packages: pymongo, yfinance, pandas, numpy, niftystocks, pytickersymbols, python-dotenv, pytest, etc (Which are mentioned in the requirements.txt file)
 
-You can install these libraries using pip:
+You can install these packages using pip and follow the below command:
+
+Execute this command
 
 ```bash
-pip install yfinance pandas niftystocks pytickersymbols
+pip install -r requirements.txt
 ```
 
 ## File Structure
 
-Navigate to `Recommendations` folder inside Backend. Remaining folders has deployment setup and infrastructure.
+- `cdk`: Contains cdk code for AWS deployment.
+- `lambda`: The folder which contains the code for the AWS lambda
+    - `app.py`: The starting point of the lambda which contains the code for proper routing.
+    - `stock_analysis.py`: The file that deals with fetching the records from the recommendations.py file
+    - `users.py`: The file that deals with the Create, read, and delete operations of the user database.
+-`layers`: contains all the dependencies required for deployment of the lambda functions in AWS.
+- `tests`: The directory which contains the unit-test cases
+    - `test_stock_analysis.py`: Contains unit tests for the functions in `stock_analysis.py`.
+    - `test_users.py`: Contains unit tests for the functions in `users.py`
 
-- `recommendation_functions.py`: Contains core functions for stock data fetching and analysis.
-- `main_script.py`: The main script that uses functions from `recommendation_functions.py` to provide stock recommendations.
-- `test_script.py`: Contains unit tests for the functions in `recommendation_functions.py`.
-
-## Running the Main Script (`main_script.py`)
+## Running the Stock Analysis Script (`stock_analysis.py`)
 
 1. Open your command line interface (CLI).
-2. Navigate to the directory containing the script.
-3. Run the script using Python:
+2. Navigate to the directory(lambda) using the command `cd lambda'.
+3. Run the script using Python command:
 
    ```bash
-   python main_script.py
+   python stock_analysis.py
    ```
 
-This script will fetch stock data based on predefined criteria, analyze it, and print a list of recommended stocks.
+This script will show the recommendations fetched from the recommendation engine and print them as a list, also performs API response build.
 
-## Running the Test Script (`test_script.py`)
+## Running the Test Scripts
 
-1. Make sure you are in the same directory as the scripts.
+1. Move to the `tests` directory
 2. Run the test script using Python:
 
    ```bash
-   python test_script.py
+   pytest 
    ```
-
-This will execute a series of unit tests defined in the script to ensure the functionality of `recommendation_functions.py`.
-
 ## Contact
 
 For further assistance or to report issues, please contact Group 35 Members.
