@@ -50,7 +50,7 @@ This README provides instructions on how to run the Android application located 
 
 ## Readme for Executing the Stock Recommendation and Testing Scripts
 
-This readme provides instructions on how to execute the stock recommendation and testing scripts. These scripts use `yfinance`, `pandas`, `niftystocks`, and `pytickersymbols` for fetching and analyzing stock data.
+This readme provides instructions on how to execute the stock recommendation, backend operations and testing scripts. These scripts use `yfinance`, `pandas`, `niftystocks`, and `pytickersymbols` for fetching and analyzing stock data.
 
 ## Requirements
 
@@ -99,6 +99,8 @@ This script will show the recommendations fetched from the recommendation engine
    ```bash
    pytest 
    ```
+This will execute a series of unit tests defined in the script to ensure the functionality of `stock_analysis.py`, `recommendation_functipons.py` and `users.py`.
+
 ## Contact
 
 For further assistance or to report issues, please contact Group 35 Members.
